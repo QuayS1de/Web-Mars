@@ -1,6 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const {
+    CleanWebpackPlugin
+} = require('clean-webpack-plugin');
 const postcssPresetEnv = require('postcss-preset-env');
 // const WOW = require('wowjs');
 module.exports = {
@@ -13,8 +15,8 @@ module.exports = {
     },
     resolve: {
         alias: {
-          'three-examples': path.join(__dirname, './node_modules/three/examples/js')
-        },   
+            'three-examples': path.join(__dirname, './node_modules/three/examples/js')
+        },
     },
     devServer: {
         port: 3100
@@ -30,8 +32,7 @@ module.exports = {
         // }),
     ],
     module: {
-        rules: [
-            {
+        rules: [{
                 test: /\.m?js$/,
                 exclude: /node_modules/,
                 use: {
@@ -53,11 +54,9 @@ module.exports = {
             },
             {
                 test: /\.(png|jpe?g|gif|svg)$/i, //если нужно обработать ещё какие-то файлы, то можно добавить в этот список
-                use: [
-                    {
-                      loader: 'file-loader'
-                    },
-                ]
+                use: [{
+                    loader: 'file-loader'
+                }, ]
             },
         ]
     },
